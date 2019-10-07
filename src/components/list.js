@@ -18,15 +18,15 @@ const List = (props) => {
                     </tr>
                 </thead>
                 <tbody>
-                        {props.users < 1 ? `${emptyList}` : props.users.map((user, index) => (
-                        <tr key={index}>
+                    {props.users < 1 ? `${emptyList}` : props.users.map((user, index) => (
+                        <tr key={index} className="row">
                             <td>{user.id}</td>
-                            <td onClick={() => props.editFirstName()}>{user.first_name}</td>
-                            <td onClick={() => props.editLastName()}>{user.last_name}</td>
-                            <td onClick={() => props.editPosition()}>{user.position}</td>
-                            <td onClick={() => props.editUsername()}>{user.username}</td>
+                            <td>{user.first_name}</td>
+                            <td>{user.last_name}</td>
+                            <td>{user.position}</td>
+                            <td>{user.username}</td>
                             <td>
-                                {/* <button className="edit" onClick={() => props.editUser(user)}>Edit</button> */}
+                                <button className="edit" onClick={() => props.editRow(user)}>Edit</button>
                                 <button className="delete" onClick={() => props.deleteUser(user.id)}>Delete</button>
                             </td>
                         </tr>
